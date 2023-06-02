@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Froms\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Froms\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_raner.1433359401.00" t="ExcludeRecursive" />
+    <e p="D:\Unity\raner" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Joystick Pack" t="Include">
+          <e p="Prefabs" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="Base" t="Include">
+              <e p="Joystick.cs" t="Include" />
+            </e>
+            <e p="Joysticks" t="Include">
+              <e p="FixedJoystick.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="All Axis Backgrounds" t="Include" />
+            <e p="Handles" t="Include" />
+            <e p="Horizontal Backgrounds" t="Include" />
+            <e p="Vertical Backgrounds" t="Include" />
+          </e>
+        </e>
+        <e p="Materials" t="Include" />
+        <e p="Models" t="Include" />
+        <e p="Prefabs" t="Include" />
+        <e p="Scenes" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Addition.cs" t="Include" />
+          <e p="Army.cs" t="Include" />
+          <e p="Bridge.cs" t="Include" />
+          <e p="Division.cs" t="Include" />
+          <e p="EnemyArmy.cs" t="Include" />
+          <e p="Hammer.cs" t="Include" />
+          <e p="Multiplication.cs" t="Include" />
+          <e p="SCriptsPlayer" t="Include">
+            <e p="MovePlayer.cs" t="Include" />
+          </e>
+          <e p="Subtraction.cs" t="Include" />
+          <e p="Unit.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="raner.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
