@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyArmy : MonoBehaviour
 {
     int armyCount;
+    public int startUnitsHealth;
     Army army;
     public GameObject unit;
     public List<GameObject> units;
     public float radius;
-    public int damage;
+    public int damage = 5;
     float minDistance;
     float maxDistance;
     bool fight;
@@ -40,17 +41,6 @@ public class EnemyArmy : MonoBehaviour
 
         Spawn();
 
-        Collider[] units = Physics.OverlapSphere(transform.position, radius);
-        foreach (Collider unit in units)
-        {
-            if (unit.CompareTag("Army") && fight == false)
-            {
-                fight = true;
-                StartCoroutine(Fighting());
-                break;
-            }
-        }
-
         float distance = Vector3.Distance(army.transform.position, transform.position);
         
         if (distance < maxDistance)
@@ -73,18 +63,6 @@ public class EnemyArmy : MonoBehaviour
             }
         }       
     }
-
-    IEnumerator Fighting()
-    {
-        while (armyCount > 0 && army.armyCount > 0)
-        {
-            army.armyCount -= damage;
-            armyCount -= army.damage;
-            yield return new WaitForSeconds(0.05f);
-        }
-        fight = false;
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;

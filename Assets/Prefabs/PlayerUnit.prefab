@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2373081316836355232}
   - component: {fileID: 8574219456189559166}
   - component: {fileID: 8367856114915382583}
-  - component: {fileID: 3995300071521118514}
+  - component: {fileID: 8956114314408558890}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: Army
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &3995300071521118514
+--- !u!114 &8956114314408558890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,9 +125,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5476756136631899146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2e81c82423eff14eb2e7266dcf78ed9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3303eea928383ed4d921e047ec751196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  player: {fileID: 5435309967287433869}
-  _fixedJoystick: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+  health: 10
+  attackRadius: 2.08
