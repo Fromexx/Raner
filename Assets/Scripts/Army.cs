@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +6,6 @@ public class Army : MonoBehaviour
     public GameObject unitExample;
     public List<GameObject> units;
     public int ArmyCount = 1;
-    public float radius;
     public float speed;
     public int damage;
 

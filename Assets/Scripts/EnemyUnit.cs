@@ -12,7 +12,7 @@ public class EnemyUnit : MonoBehaviour
     EnemyArmy enemyArmy;
 
     private void Start()
-    {        
+    {
         enemyArmy = GetComponentInParent<EnemyArmy>();
         animator = GetComponent<Animator>();
         health = enemyArmy.startUnitsHealth;
@@ -51,7 +51,7 @@ public class EnemyUnit : MonoBehaviour
     {
         if (other.CompareTag("PlayerUnit"))
         {
-            //Анимация
+            //РђРЅРёРјР°С†РёСЏ
             Attack();
         }
     }
