@@ -22,22 +22,12 @@ public class Army : MonoBehaviour
         _nextSpawnedUnitIndex = 0;
     }
 
-    private void Update()
+    public void OnArmyCountChanged(int newArmyCount)
     {
-        if(Input.GetKeyDown(KeyCode.T)) OnArmyIncrease();
-        else if(Input.GetKeyDown(KeyCode.Y)) OnArmyDecrease();
-    }
-
-    public void OnArmyIncrease()
-    {
-        armyCount++;
-        SpawnArmy();
-    }
-
-    public void OnArmyDecrease()
-    {
-        armyCount--;
-        DeleteArmy();
+        var oldArmyCount = armyCount;
+        armyCount = newArmyCount;
+        if(newArmyCount > oldArmyCount) SpawnArmy();
+        else DeleteArmy();
     }
 
     private void SpawnArmy()
@@ -79,7 +69,7 @@ public class Army : MonoBehaviour
             if (_nextSpawnedUnitIndex == 0)
             {
                 _nextSpawnedUnitCircleIndex--;
-                _nextSpawnedUnitIndex = CalculateMaxUnitsCountAtCircle(_nextSpawnedUnitCircleIndex);
+                _nextSpawnedUnitIndex = CalculateMaxUnitsCountAtCircle(_nextSpawnedUnitCircleIndex) - 1;
                 continue;
             }
             _nextSpawnedUnitIndex--;
