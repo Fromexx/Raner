@@ -10,9 +10,9 @@ public class Multiplication : MonoBehaviour
 
     private void Start()
     {
-        value = Random.Range(2, 10);       
+        value = Random.Range(2, 5);       
         army = FindObjectOfType<Army>();
-        army.armyCount *= value;
+        army.OnArmyCountChanged(army.armyCount * value);
     }
 
 
@@ -20,7 +20,7 @@ public class Multiplication : MonoBehaviour
     {
         if (other.CompareTag("Army"))
         {
-            army.armyCount *= value;
+            army.OnArmyCountChanged(army.armyCount * value);
         }
     }
 }

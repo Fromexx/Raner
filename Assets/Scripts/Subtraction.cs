@@ -10,32 +10,22 @@ public class Subtraction : MonoBehaviour
 
     private void Start()
     {
-        army = FindObjectOfType<Army>();               
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        army = FindObjectOfType<Army>();
+        value = Random.Range(1, 200);
+        if (army.armyCount <= value)
         {
-            value = Random.Range(1, 200);
-            if (army.armyCount <= value)
+            while (army.armyCount <= value)
             {
-                while (army.armyCount <= value)
-                {
-                    value = Random.Range(1, 200);
-                }
+                value = Random.Range(1, 200);
             }
-            army.armyCount -= value;
         }
     }
-
-
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Army"))
         {
-            army.armyCount -= value;
+            army.OnArmyCountChanged(army.armyCount - value);
         }
     }
 }

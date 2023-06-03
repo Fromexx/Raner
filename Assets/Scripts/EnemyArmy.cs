@@ -7,29 +7,27 @@ public class EnemyArmy : MonoBehaviour
     int armyCount;
     public int startUnitsHealth;
     Army army;
-    public GameObject unit;
+    public GameObject unitExample;
     public List<GameObject> units;
-    public float radius;
     public int damage = 5;
     float minDistance;
     float maxDistance;
     bool fight;
 
+    [SerializeField] private float _radius;
+
+    private int _nextSpawnedUnitCircleIndex;
+    private int _nextSpawnedUnitIndex;
+
     private void Start()
     {
-        radius = Random.Range(5f, 10f);
-        maxDistance = radius + 10;
-        minDistance = radius;
         armyCount = Random.Range(5, 200);
-        army = FindObjectOfType<Army>(); 
-        
-        for (int i = 0; i < armyCount; i++)
-        {
-            GameObject newUnit = Instantiate(unit, transform.position, unit.transform.rotation);
-            newUnit.transform.SetParent(transform);
-            units.Add(newUnit);
-            newUnit.transform.localPosition = new Vector3(Random.Range(-radius, radius), 0f, Random.Range(-radius, radius));
-        }       
+        army = FindObjectOfType<Army>();
+
+        _nextSpawnedUnitCircleIndex = 0;
+        _nextSpawnedUnitIndex = 0;
+
+        SpawnArmy();
     }
 
     private void Update()
@@ -37,9 +35,7 @@ public class EnemyArmy : MonoBehaviour
         if (armyCount <= 0)
         {
             Destroy(gameObject);         
-        }
-
-        Spawn();
+        }      
 
         float distance = Vector3.Distance(army.transform.position, transform.position);
         
@@ -52,21 +48,46 @@ public class EnemyArmy : MonoBehaviour
         }
     }
 
-    void Spawn()
+    private void SpawnArmy()
     {
-        if (transform.childCount > armyCount)
+        var remainingArmy = armyCount - units.Count;
+
+        for (; remainingArmy != 0;)
         {
-            for (int i = units.Count; i > armyCount; i--)
+            var currentCircleRadius = _radius * _nextSpawnedUnitCircleIndex;
+            var maxUnitsCountAtCircle = CalculateMaxUnitsCountAtCircle(_nextSpawnedUnitCircleIndex);
+            var missingUnitsCountAtCircle = maxUnitsCountAtCircle - _nextSpawnedUnitIndex;
+
+            var unitsCount = missingUnitsCountAtCircle > remainingArmy ? remainingArmy : missingUnitsCountAtCircle;
+            var angleSection = Mathf.PI * 2 / maxUnitsCountAtCircle;
+
+            for (int i = 0; i < unitsCount; _nextSpawnedUnitIndex++, remainingArmy--, i++)
             {
-                Destroy(units[units.Count - 1]);
-                units.RemoveAt(units.Count - 1);
+                float angle = _nextSpawnedUnitIndex * angleSection;
+                Vector3 newPos = unitExample.transform.position + new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * currentCircleRadius;
+                var unit = Instantiate(unitExample, newPos, unitExample.transform.rotation);
+                unit.SetActive(true);
+                unit.transform.SetParent(transform);
+                units.Add(unit);
             }
-        }       
+
+            if (unitsCount != missingUnitsCountAtCircle) continue;
+            _nextSpawnedUnitCircleIndex++;
+            _nextSpawnedUnitIndex = 0;
+        }
     }
+
+    private int CalculateMaxUnitsCountAtCircle(int circleIndex)
+    {
+        var currentCircleRadius = _radius * circleIndex;
+        if (currentCircleRadius == 0) return 1;
+        return (int)(2 * Mathf.PI * currentCircleRadius / unitExample.transform.lossyScale.x);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, _radius);
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, maxDistance);

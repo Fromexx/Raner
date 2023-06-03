@@ -19,7 +19,8 @@ public class PlayerUnit : MonoBehaviour
     private void Update()
     {
         if (health <= 0)
-        {                      
+        { 
+            army.armyCount--;
             army.units.Remove(gameObject);
             Destroy(gameObject);
         }

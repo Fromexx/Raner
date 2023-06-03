@@ -9,8 +9,7 @@ public class Addition : MonoBehaviour
     private void Start()
     {
         army = FindObjectOfType<Army>();
-        value = Random.Range(1, 200);
-        army.armyCount += value;
+        value = Random.Range(1, 200);       
     }
 
 
@@ -19,7 +18,7 @@ public class Addition : MonoBehaviour
     {
         if (other.CompareTag("Army"))
         {
-            army.armyCount += value;
+            army.OnArmyCountChanged(army.armyCount + value);
         }
     }
 }

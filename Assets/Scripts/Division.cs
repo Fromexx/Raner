@@ -11,15 +11,15 @@ public class Division : MonoBehaviour
     private void Start()
     {              
         army = FindObjectOfType<Army>();
-        value = Random.Range(1, 10);
+        value = Random.Range(2, 5);
         if (army.armyCount % value != 0)
         {
             while (army.armyCount % value != 0)
             {
-                value = Random.Range(1, 10);
+                value = Random.Range(2, 5);
             }
         }
-        army.armyCount /= value;
+        army.OnArmyCountChanged(army.armyCount / value);
     }
 
   
@@ -28,7 +28,7 @@ public class Division : MonoBehaviour
     {
         if (other.CompareTag("Army"))
         {
-            army.armyCount /= value;
+            army.OnArmyCountChanged(army.armyCount / value);
         }
     }
 }
