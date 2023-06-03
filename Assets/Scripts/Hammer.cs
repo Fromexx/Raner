@@ -20,7 +20,7 @@ public class Hammer : MonoBehaviour
         {
             if (unit.CompareTag("Army"))
             {
-                army.armyCount -= damage;
+                army.ArmyCount -= damage;
                 break;
             }
         }

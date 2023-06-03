@@ -6,7 +6,7 @@ public class Army : MonoBehaviour
 {
     public GameObject unitExample;
     public List<GameObject> units;
-    public int armyCount = 1;
+    public int ArmyCount = 1;
     public float radius;
     public float speed;
     public int damage;
@@ -24,26 +24,24 @@ public class Army : MonoBehaviour
 
     public void OnArmyCountChanged(int newArmyCount)
     {
-        var oldArmyCount = armyCount;
-        armyCount = newArmyCount;
-        if(newArmyCount > oldArmyCount) SpawnArmy();
-        else DeleteArmy();
+        ArmyCount = newArmyCount;
+        var remainingArmy = ArmyCount - units.Count;
+        if(remainingArmy < 0) DeleteArmy(-remainingArmy);
+        else SpawnArmy(remainingArmy);
     }
 
-    private void SpawnArmy()
+    private void SpawnArmy(int armyCount)
     {
-        var remainingArmy = armyCount - units.Count;
-
-        for(; remainingArmy != 0;)
+        for(; armyCount != 0;)
         {
             var currentCircleRadius = _radius * _nextSpawnedUnitCircleIndex;
             var maxUnitsCountAtCircle = CalculateMaxUnitsCountAtCircle(_nextSpawnedUnitCircleIndex);
             var missingUnitsCountAtCircle = maxUnitsCountAtCircle - _nextSpawnedUnitIndex;
             
-            var unitsCount = missingUnitsCountAtCircle > remainingArmy ? remainingArmy : missingUnitsCountAtCircle;
+            var unitsCount = missingUnitsCountAtCircle > armyCount ? armyCount : missingUnitsCountAtCircle;
             var angleSection = Mathf.PI * 2 / maxUnitsCountAtCircle;
 
-            for (int i = 0; i < unitsCount; _nextSpawnedUnitIndex++, remainingArmy--, i++)
+            for (int i = 0; i < unitsCount; _nextSpawnedUnitIndex++, armyCount--, i++)
             {
                 float angle = _nextSpawnedUnitIndex * angleSection;
                 Vector3 newPos = unitExample.transform.position + new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * currentCircleRadius;
@@ -59,11 +57,9 @@ public class Army : MonoBehaviour
         }
     }
 
-    private void DeleteArmy()
+    private void DeleteArmy(int armyCount)
     {
-        var remainingArmy = units.Count - armyCount;
-
-        for (int i = 0; i < remainingArmy; i++)
+        for (int i = 0; i < armyCount; i++)
         {
             DeleteUnit(units.Count - 1);
             if (_nextSpawnedUnitIndex == 0)

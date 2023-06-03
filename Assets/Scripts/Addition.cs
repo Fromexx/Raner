@@ -18,7 +18,7 @@ public class Addition : MonoBehaviour
     {
         if (other.CompareTag("Army"))
         {
-            army.OnArmyCountChanged(army.armyCount + value);
+            army.OnArmyCountChanged(army.ArmyCount + value);
         }
     }
 }

@@ -20,7 +20,7 @@ public class PlayerUnit : MonoBehaviour
     {
         if (health <= 0)
         { 
-            army.armyCount--;
+            army.ArmyCount--;
             army.units.Remove(gameObject);
             Destroy(gameObject);
         }
@@ -50,7 +50,7 @@ public class PlayerUnit : MonoBehaviour
     {
         if (other.CompareTag("EnemyUnit"))
         {
-            //àíèìàöèÿ
+            //Ð°Ð½Ð¸Ð¼Ð°Ñ†Ð¸Ñ
             Attack();
         }
     }

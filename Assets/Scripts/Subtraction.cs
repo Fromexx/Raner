@@ -12,9 +12,9 @@ public class Subtraction : MonoBehaviour
     {
         army = FindObjectOfType<Army>();
         value = Random.Range(1, 200);
-        if (army.armyCount <= value)
+        if (army.ArmyCount <= value)
         {
-            while (army.armyCount <= value)
+            while (army.ArmyCount <= value)
             {
                 value = Random.Range(1, 200);
             }
@@ -25,7 +25,7 @@ public class Subtraction : MonoBehaviour
     {
         if (other.CompareTag("Army"))
         {
-            army.OnArmyCountChanged(army.armyCount - value);
+            army.OnArmyCountChanged(army.ArmyCount - value);
         }
     }
 }
