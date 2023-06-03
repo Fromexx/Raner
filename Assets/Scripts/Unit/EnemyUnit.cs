@@ -1,32 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerUnit : MonoBehaviour
+public class EnemyUnit : MonoBehaviour
 {
-    [SerializeField] int health;
+    public float health;
     [SerializeField] float attackRadius;
+
     Animator animator;
-    Army army;
+    EnemyArmy enemyArmy;
 
     private void Start()
     {
-        army = FindObjectOfType<Army>();
+        enemyArmy = GetComponentInParent<EnemyArmy>();
         animator = GetComponent<Animator>();
+        health = enemyArmy.startUnitsHealth;
     }
 
     private void Update()
     {
         if (health <= 0)
-        { 
-            army.ArmyCount--;
-            army.units.Remove(gameObject);
+        {
+            enemyArmy.units.Remove(gameObject);
             Destroy(gameObject);
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (health > 0)
         {
@@ -36,21 +34,21 @@ public class PlayerUnit : MonoBehaviour
 
     public void Attack()
     {
-        Collider[] enemies = Physics.OverlapSphere(transform.position, attackRadius);
-        foreach (Collider enemy in enemies)
+        Collider[] units = Physics.OverlapSphere(transform.position, attackRadius);
+        foreach (Collider unit in units)
         {
-            if (enemy.CompareTag("EnemyUnit"))
+            if (unit.CompareTag("PlayerUnit"))
             {
-                enemy.GetComponent<EnemyUnit>().TakeDamage(army.damage);
+                unit.GetComponent<PlayerUnit>().TakeDamage(enemyArmy.damage);
             }
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("EnemyUnit"))
+        if (other.CompareTag("PlayerUnit"))
         {
-            //анимация
+            //Анимация
             Attack();
         }
     }
