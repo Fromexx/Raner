@@ -6,7 +6,6 @@ public class Army : MonoBehaviour
     public GameObject unitExample;
     public List<GameObject> units;
     public int armyCount = 1;
-    public float radius;
     public float speed;
     public int damage;
 
@@ -65,6 +64,6 @@ public class Army : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, _radius);
     }
 } 

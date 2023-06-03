@@ -272,7 +272,6 @@ MonoBehaviour:
   unitExample: {fileID: 5476756136631899146, guid: aa8d311ee4457e64ead3b7fc119a33d1, type: 3}
   units: []
   armyCount: 1
-  radius: 6.24
   speed: 7
   damage: 1
   _radius: 1
@@ -545,7 +544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: DamagePrice
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1350,7 +1349,7 @@ GameObject:
   - component: {fileID: 1688574677}
   - component: {fileID: 1688574676}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DamageUpgradeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1699,7 +1698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5476756136631899146, guid: aa8d311ee4457e64ead3b7fc119a33d1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa8d311ee4457e64ead3b7fc119a33d1, type: 3}
