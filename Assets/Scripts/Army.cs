@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,6 +35,7 @@ public class Army : MonoBehaviour
 
     public void OnArmyDecrease()
     {
+        if (armyCount <= 0) return;
         armyCount--;
         DeleteArmy();
     }
@@ -79,11 +79,14 @@ public class Army : MonoBehaviour
             if (_nextSpawnedUnitIndex == 0)
             {
                 _nextSpawnedUnitCircleIndex--;
-                _nextSpawnedUnitIndex = CalculateMaxUnitsCountAtCircle(_nextSpawnedUnitCircleIndex);
+                _nextSpawnedUnitIndex = CalculateMaxUnitsCountAtCircle(_nextSpawnedUnitCircleIndex) - 1;
                 continue;
             }
             _nextSpawnedUnitIndex--;
         }
+        
+        print(_nextSpawnedUnitIndex);
+        print(_nextSpawnedUnitCircleIndex);
     }
 
     private int CalculateMaxUnitsCountAtCircle(int circleIndex)
