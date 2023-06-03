@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,20 @@ public class Army : MonoBehaviour
 
     [SerializeField] private float _radius;
 
-    private float _unitYPosition;
+    private int _nextSpawnedUnitCircleIndex;
+    private int _nextSpawnedUnitIndex;
+
+    private void Awake()
+    {
+        _nextSpawnedUnitCircleIndex = 0;
+        _nextSpawnedUnitIndex = 0;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.T)) OnArmyIncrease();
+        else if(Input.GetKeyDown(KeyCode.Y)) OnArmyDecrease();
+    }
 
     public void OnArmyIncrease()
     {
@@ -23,48 +37,65 @@ public class Army : MonoBehaviour
     public void OnArmyDecrease()
     {
         armyCount--;
-        SpawnArmy();
+        DeleteArmy();
     }
 
     private void SpawnArmy()
     {
-        DeleteArmy();
-        var remainingArmy = armyCount;
+        var remainingArmy = armyCount - units.Count;
 
-        for (int c = 1; ; c++)
+        for(; remainingArmy != 0;)
         {
-            if (remainingArmy == 0) break;
+            var currentCircleRadius = _radius * _nextSpawnedUnitCircleIndex;
+            var maxUnitsCountAtCircle = CalculateMaxUnitsCountAtCircle(_nextSpawnedUnitCircleIndex);
+            var missingUnitsCountAtCircle = maxUnitsCountAtCircle - _nextSpawnedUnitIndex;
+            
+            var unitsCount = missingUnitsCountAtCircle > remainingArmy ? remainingArmy : missingUnitsCountAtCircle;
+            var angleSection = Mathf.PI * 2 / maxUnitsCountAtCircle;
 
-            var currentCircleRadius = _radius * c;
-            var maxUnitsCountAtCircle = (int) (2 * Mathf.PI * currentCircleRadius / unitExample.transform.lossyScale.x);
-            var unitsCount = maxUnitsCountAtCircle > remainingArmy ? remainingArmy : maxUnitsCountAtCircle;
-            var angleSection = Mathf.PI * 2 / unitsCount;
-
-            for (int i = 0; i < unitsCount; i++)
+            for (int i = 0; i < unitsCount; _nextSpawnedUnitIndex++, remainingArmy--, i++)
             {
-                float angle = i * angleSection;
-                Vector3 newPos = unitExample.transform.position + new Vector3(Mathf.Cos(angle), _unitYPosition, Mathf.Sin(angle)) * currentCircleRadius;
+                float angle = _nextSpawnedUnitIndex * angleSection;
+                Vector3 newPos = unitExample.transform.position + new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * currentCircleRadius;
                 var unit = Instantiate(unitExample, newPos, unitExample.transform.rotation);
+                unit.SetActive(true);
                 unit.transform.SetParent(transform);
                 units.Add(unit);
-                remainingArmy--;
             }
+
+            if (unitsCount != missingUnitsCountAtCircle) continue;
+            _nextSpawnedUnitCircleIndex++;
+            _nextSpawnedUnitIndex = 0;
         }
     }
 
     private void DeleteArmy()
     {
-        for (int i = units.Count; i > 0; i--)
+        var remainingArmy = units.Count - armyCount;
+
+        for (int i = 0; i < remainingArmy; i++)
         {
-            print(i);
-            Destroy(units[units.Count - 1]);
-            units.RemoveAt(units.Count - 1);
+            DeleteUnit(units.Count - 1);
+            if (_nextSpawnedUnitIndex == 0)
+            {
+                _nextSpawnedUnitCircleIndex--;
+                _nextSpawnedUnitIndex = CalculateMaxUnitsCountAtCircle(_nextSpawnedUnitCircleIndex);
+                continue;
+            }
+            _nextSpawnedUnitIndex--;
         }
     }
 
-    private void OnDrawGizmosSelected()
+    private int CalculateMaxUnitsCountAtCircle(int circleIndex)
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        var currentCircleRadius = _radius * circleIndex;
+        if (currentCircleRadius == 0) return 1;
+        return (int) (2 * Mathf.PI * currentCircleRadius / unitExample.transform.lossyScale.x);
+    }
+
+    private void DeleteUnit(int index)
+    {
+        Destroy(units[index]);
+        units.RemoveAt(index);
     }
 } 
