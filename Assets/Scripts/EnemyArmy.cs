@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyArmy : MonoBehaviour
 {
     int armyCount;
+    public int startUnitsHealth;
     Army army;
     public GameObject unit;
     public List<GameObject> units;
     public float radius;
-    public int damage;
+    public int damage = 5;
     float minDistance;
     float maxDistance;
     bool fight;

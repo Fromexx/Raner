@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class EnemyUnit : MonoBehaviour
 {
-    [SerializeField] int health;
+    public float health;
     [SerializeField] float attackRadius;
 
     Animator animator;
     EnemyArmy enemyArmy;
 
     private void Start()
-    {
-        enemyArmy = FindObjectOfType<EnemyArmy>();
+    {        
+        enemyArmy = GetComponentInParent<EnemyArmy>();
         animator = GetComponent<Animator>();
+        health = enemyArmy.startUnitsHealth;
     }
 
     private void Update()
@@ -26,7 +27,7 @@ public class EnemyUnit : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (health > 0)
         {

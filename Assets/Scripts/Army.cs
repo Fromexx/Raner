@@ -7,7 +7,7 @@ public class Army : MonoBehaviour
     public List<GameObject> units;
     public int armyCount = 1;
     public float speed;
-    public int damage;
+    public float damage;
 
     [SerializeField] private float _radius;
 
