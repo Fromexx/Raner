@@ -6,6 +6,7 @@ using UnityEngine;
 public class Upgrade : MonoBehaviour
 {
     Army army;
+    EnemyArmy enemyArmy;
     Balance balance;
     public TextMeshProUGUI damagePriceText;
     //public TextMeshProUGUI rewardPriceText;
@@ -17,6 +18,7 @@ public class Upgrade : MonoBehaviour
     {
         army = FindObjectOfType<Army>();
         balance = FindObjectOfType<Balance>();
+        enemyArmy = FindObjectOfType<EnemyArmy>();
     }
 
     private void Update()
@@ -29,9 +31,10 @@ public class Upgrade : MonoBehaviour
     {
         if (balance.balance >= damagePrice)
         {
-            army.damage *= 2;
             balance.balance -= damagePrice;
-            damagePrice += 10;
+            damagePrice += 5;
+            enemyArmy.startUnitsHealth += 5;
+            army.damage = enemyArmy.startUnitsHealth / 4;            
         }       
     }
 
