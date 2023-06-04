@@ -5,14 +5,13 @@ public class Army : MonoBehaviour
 {
     public GameObject unitExample;
     public List<GameObject> units;
-    public int ArmyCount = 1;
-    public float speed;
-    public int damage;
+    public int ArmyCount { get; set; }
+    public int Damage { get; set; }
 
     [SerializeField] private float _radius;
 
-    private int _nextSpawnedUnitCircleIndex;
-    private int _nextSpawnedUnitIndex;
+    protected int _nextSpawnedUnitCircleIndex;
+    protected int _nextSpawnedUnitIndex;
 
     private void Awake()
     {
@@ -28,7 +27,7 @@ public class Army : MonoBehaviour
         else SpawnArmy(remainingArmy);
     }
 
-    private void SpawnArmy(int armyCount)
+    protected void SpawnArmy(int armyCount)
     {
         for(; armyCount != 0;)
         {

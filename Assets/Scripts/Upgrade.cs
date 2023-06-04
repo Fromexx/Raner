@@ -34,7 +34,7 @@ public class Upgrade : MonoBehaviour
             balance.balance -= damagePrice;
             damagePrice += 5;
             enemyArmy.startUnitsHealth += 5;
-            army.damage = enemyArmy.startUnitsHealth / 4;            
+            army.Damage = enemyArmy.startUnitsHealth / 4;            
         }       
     }
 
