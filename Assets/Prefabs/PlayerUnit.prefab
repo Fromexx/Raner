@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 8574219456189559166}
   - component: {fileID: 8367856114915382583}
   - component: {fileID: 8956114314408558890}
-  - component: {fileID: 2894661823838311370}
   m_Layer: 0
   m_Name: PlayerUnit
-  m_TagString: PlayerUnit
+  m_TagString: Army
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,16 +130,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   attackRadius: 2.08
---- !u!65 &2894661823838311370
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5476756136631899146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
