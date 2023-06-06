@@ -20,58 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f94a63fa-e9eb-4094-b27d-472e205b0795" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/AnimatorsControllers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/AnimatorsControllers/BridgeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Animations/AnimatorsControllers/BridgeController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Enemy.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Enemy/EnemyArmy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Player.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Player/PlayerArmy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Player/PlayerArmy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Player/PlayerArmyMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Player/PlayerArmyMovement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Army/UnitSpawnAndDelete.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Fight.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Fight/Fight.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Fight/Fight.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUnitSpawnAndDelete.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUnitSpawnAndDelete.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUpgradeFabric.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interfaces/IUpgradeFabric.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Unit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/Unit.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrade.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrade/UpgradeDamageFabric.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrade/UpgradeDamageFabric.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrade/UpgradeRewardFabric.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Upgrade/UpgradeRewardFabric.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.raner/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.raner/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.raner/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.raner/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.raner/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.raner/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.raner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.raner/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Addition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Addition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Army/Army.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Army.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Army/EnemyArmy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Army/UnitSpawnAndDelete.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Army/EnemyArmy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Army/Enemy/EnemyArmy.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Balance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wallet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Balance.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Wallet.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bridge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bridge.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Division.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Division.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Army/PlayerArmy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Army/PlayerArmy.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hammer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hammer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Multiplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Multiplication.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SCriptsPlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SCriptsPlayer/MovePlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SCriptsPlayer/MovePlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Subtraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Subtraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/EnemyUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/EnemyUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unit/PlayerUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unit/PlayerUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrade.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Upgrade.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +37,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Unit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit/Unit.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Joystick Pack/Scripts/Base/Joystick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Army/Player/PlayerArmyMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Army/Player/PlayerArmy.cs" root0="FORCE_HIGHLIGHTING" />
@@ -101,7 +55,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Army/Enemy/EnemyArmy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Upgrade/UpgradeDamageFabric.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bridge.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Addition.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Subtraction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Addition.cs" root0="FORCE_HIGHLIGHTING" />
@@ -114,10 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Army.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Addition.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Division.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Army.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyArmy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyArmy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyUnit.cs" />
@@ -165,6 +114,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Wallet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Upgrade/UpgradeRewardFabric.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Upgrade.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Army/UnitDelete.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Army/UnitSpawn.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Army/UnitSpawnAndDelete.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Hammer.cs" />
       </list>
     </option>
   </component>
@@ -221,7 +174,8 @@
       <workItem from="1685971939277" duration="3577000" />
       <workItem from="1686015159483" duration="1952000" />
       <workItem from="1686043336580" duration="124000" />
-      <workItem from="1686050445640" duration="317000" />
+      <workItem from="1686050445640" duration="580000" />
+      <workItem from="1686062300096" duration="862000" />
     </task>
     <task id="LOCAL-00001" summary="Finish unit spawn at circle">
       <created>1685780350617</created>
@@ -251,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685798846618</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactor large part of code">
+      <created>1686050795140</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686050795140</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
@@ -273,17 +234,18 @@
     <MESSAGE value="Finish unit spawn at circle" />
     <MESSAGE value="Refactor OnArmyCountChanged" />
     <MESSAGE value="Add unit spawn at EnemyArmy.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add unit spawn at EnemyArmy.cs" />
+    <MESSAGE value="Refactor large part of code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor large part of code" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="267" y="86" key="MergeDialog" timestamp="1685791466924">
+    <state x="267" y="86" key="MergeDialog" timestamp="1686050961389">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="267" y="86" key="MergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1685791466924" />
-    <state x="848" y="392" width="442" height="265" key="MultipleFileMergeDialog" timestamp="1685791468275">
+    <state x="267" y="86" key="MergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1686050961389" />
+    <state x="848" y="392" width="442" height="265" key="MultipleFileMergeDialog" timestamp="1686050961393">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="848" y="392" width="442" height="265" key="MultipleFileMergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1685791468275" />
+    <state x="848" y="392" width="442" height="265" key="MultipleFileMergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1686050961393" />
     <state x="807" y="235" key="RollbackChangesDialog" timestamp="1685939384498">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -292,10 +254,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="VCS.FileHistoryDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1686017130362" />
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1685798850403">
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2" timestamp="1686050972684">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1685798850403" />
+    <state x="552" y="257" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1686050972684" />
     <state x="92" y="92" width="1736" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1685719091036">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

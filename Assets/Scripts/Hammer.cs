@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class Hammer : MonoBehaviour
 {
-    [SerializeField] private int _damage;
     [SerializeField] private float _radius;
 
-    public void Attack()
+    public void OnAttacking()
     {
+        print("tohotkhkok");
+        
         var units = Physics.OverlapSphere(transform.position, _radius);
         
         foreach (var unit in units)
