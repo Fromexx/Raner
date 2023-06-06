@@ -1,34 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 public class Division : MonoBehaviour
 {
-    int value;
-    Army army;
-
-
-    private void Start()
-    {              
-        army = FindObjectOfType<Army>();
-        value = Random.Range(2, 5);
-        if (army.ArmyCount % value != 0)
-        {
-            while (army.ArmyCount % value != 0)
-            {
-                value = Random.Range(2, 5);
-            }
-        }
-        army.OnArmyCountChanged(army.ArmyCount / value);
-    }
-
-  
-
+    // ДИЧЬ
+    private int _value;
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Army"))
+        if (!other.TryGetComponent(out PlayerArmy army)) return;
+        
+        _value = Random.Range(2, 5);
+
+        while (army.ArmyCount % _value != 0)
         {
-            army.OnArmyCountChanged(army.ArmyCount / value);
+            _value = Random.Range(2, 5);
         }
+        army.OnUnitsSpawning(army.ArmyCount / _value);
     }
 }

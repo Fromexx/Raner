@@ -2,23 +2,13 @@ using UnityEngine;
 
 public class Addition : MonoBehaviour
 {
-    int value;
-    Army army;
-
-
-    private void Start()
-    {
-        army = FindObjectOfType<Army>();
-        value = Random.Range(1, 200);       
-    }
-
-
+    private int _value = Random.Range(1, 200);
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Army"))
+        if (other.TryGetComponent(out Army army))
         {
-            army.OnArmyCountChanged(army.ArmyCount + value);
+            army.OnUnitsSpawning(_value);
         }
     }
 }

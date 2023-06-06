@@ -1,21 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using Animations;
 using UnityEngine;
 
 public class Bridge : MonoBehaviour
 {
-    Animator animator;
+    private Animator _animator;
 
-    private void Start()
+    private void Awake()
     {
-        animator = transform.GetChild(0).GetComponent<Animator>();
+        TryGetComponent(out Animator _animator);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Army"))
+        if (other.TryGetComponent(out Army army))
         {
-            animator.SetTrigger("Up");
+            _animator.SetTrigger(BridgeController.Params.Up);
         }
     }
 }

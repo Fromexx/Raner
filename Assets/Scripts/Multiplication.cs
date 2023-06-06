@@ -1,26 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Multiplication : MonoBehaviour
 {
-    int value;
-    Army army;
-
-
-    private void Start()
+    private int _value;
+    
+    private void Awake()
     {
-        value = Random.Range(2, 5);       
-        army = FindObjectOfType<Army>();
-        army.OnArmyCountChanged(army.ArmyCount * value);
+        _value = Random.Range(2, 5);
     }
-
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Army"))
+        if (other.TryGetComponent(out Army army))
         {
-            army.OnArmyCountChanged(army.ArmyCount * value);
+            army.OnUnitsSpawning(army.ArmyCount * _value);
         }
     }
 }
