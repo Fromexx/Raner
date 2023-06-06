@@ -4,8 +4,21 @@ using UnityEngine;
 
 public abstract class Army : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public event Action AllUnitsDied;
     public int ArmyCount => Units.Count;
+=======
+<<<<<<< HEAD
+    public GameObject unitExample;
+    public List<GameObject> units;
+    public int ArmyCount { get; set; }
+    public int Damage { get; set; }
+    public int startUnitsHealth;
+=======
+    public event Action AllUnitsDied;
+    public int ArmyCount => Units.Count;
+>>>>>>> 5a5e2b9ac7f348b01d9cc3f0fa3c5d7841f4bf5d
+>>>>>>> Stashed changes
 
     public int Damage
     {

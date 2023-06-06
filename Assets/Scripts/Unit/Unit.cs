@@ -3,7 +3,26 @@ using UnityEngine;
 
 namespace Unit
 {
+<<<<<<< Updated upstream
     public abstract class Unit : MonoBehaviour
+=======
+<<<<<<< HEAD
+    [SerializeField] public int Health { get; set; }
+    [SerializeField] protected float attackRadius;
+    protected Army army;
+    private Animator animator;
+
+    private void Start()
+    {   
+        army = GetComponentInParent<Army>();
+        animator = GetComponent<Animator>();
+    }
+
+    public void Attack()
+=======
+    public abstract class Unit : MonoBehaviour
+>>>>>>> 5a5e2b9ac7f348b01d9cc3f0fa3c5d7841f4bf5d
+>>>>>>> Stashed changes
     {
         public event Action<Unit> UnitDied;
 
@@ -15,6 +34,12 @@ namespace Unit
 
         private void Awake()
         {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            if (unit.gameObject.TryGetComponent(out Unit unit1))
+=======
+>>>>>>> Stashed changes
             TryGetComponent(out _animator);
         }
 
@@ -27,6 +52,10 @@ namespace Unit
         {
             var unitsColliders = Physics.OverlapSphere(transform.position, _attackRadius);
             foreach (var unitCollider in unitsColliders)
+<<<<<<< Updated upstream
+=======
+>>>>>>> 5a5e2b9ac7f348b01d9cc3f0fa3c5d7841f4bf5d
+>>>>>>> Stashed changes
             {
                 if (!IsColliderValid(unitCollider)) return;
                 
@@ -56,4 +85,41 @@ namespace Unit
             }
         }
     }
+<<<<<<< Updated upstream
 }
+=======
+<<<<<<< HEAD
+
+    public void TakeDamage(int damage)
+    {
+        if (Health <= 0)
+        {
+            
+            Destroy(gameObject);
+        }
+        else
+        {
+            Health -= damage;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out Army army))
+        {
+            
+            //Анимация
+            Attack();
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
+    }
+}
+=======
+}
+>>>>>>> 5a5e2b9ac7f348b01d9cc3f0fa3c5d7841f4bf5d
+>>>>>>> Stashed changes
