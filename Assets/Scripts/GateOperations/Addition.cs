@@ -1,10 +1,13 @@
-public class Addition : IGateOperation
+namespace Assets.Scripts.GateOperations
 {
-    public readonly int CountToAdd;
- 
-    public Addition(int countToAdd)
+    public class Addition : IGateOperation
     {
-        CountToAdd = countToAdd;
+        public readonly int CountToAdd;
+
+        public Addition(int countToAdd)
+        {
+            CountToAdd = countToAdd;
+        }
+        public int DoOperation(int incomingArmySize) => incomingArmySize + CountToAdd;
     }
-    public int DoOperation(int incomingArmySize) => incomingArmySize + CountToAdd;
 }

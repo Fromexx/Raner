@@ -1,7 +1,7 @@
-﻿using Interfaces;
+﻿using Assets.Scripts.Interfaces;
 using UnityEngine;
 
-namespace Upgrade
+namespace Assets.Scripts.Upgrade
 {
     public class UpgradeRewardFabric : MonoBehaviour, IUpgradeFabric
     {

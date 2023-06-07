@@ -1,6 +1,6 @@
-﻿namespace Animations
+﻿namespace Assets.Scripts.Animations.AnimatorsConstants
 {
-    public static class BridgeController
+    public static class BridgeAnimationConstants
     {
         public static class Params
         {

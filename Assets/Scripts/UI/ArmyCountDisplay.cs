@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace Assets.Scripts.Ui
 {
     public class ArmyCountDisplay : MonoBehaviour
     {

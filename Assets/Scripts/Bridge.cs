@@ -1,4 +1,5 @@
-using Animations;
+using Assets.Scripts.Animations.AnimatorsConstants;
+using Assets.Scripts.Army;
 using UnityEngine;
 
 public class Bridge : MonoBehaviour
@@ -14,7 +15,7 @@ public class Bridge : MonoBehaviour
     {
         if (other.TryGetComponent(out Army army))
         {
-            _animator.SetTrigger(BridgeController.Params.Up);
+            _animator.SetTrigger(BridgeAnimationConstants.Params.Up);
         }
     }
 }

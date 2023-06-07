@@ -1,4 +1,7 @@
-public interface IGateOperation
+namespace Assets.Scripts.GateOperations
 {
-    public int DoOperation(int incomingArmySize);
+    public interface IGateOperation
+    {
+        public int DoOperation(int incomingArmySize);
+    }
 }

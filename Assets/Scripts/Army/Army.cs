@@ -2,50 +2,53 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Army : MonoBehaviour
+namespace Assets.Scripts.Army
 {
-    public event Action AllUnitsDied;
-    public int ArmyCount => Units.Count;
-
-    public int Damage
+    public abstract class Army : MonoBehaviour
     {
-        get => _damage;
-        set
+        public event Action AllUnitsDied;
+        public int ArmyCount => Units.Count;
+
+        public int Damage
         {
-            if (value < 0) return;
-            _damage = value;
+            get => _damage;
+            set
+            {
+                if (value < 0) return;
+                _damage = value;
+            }
         }
-    }
 
-    public UnitSpawnAndDelete UnitSpawnAndDelete => _unitSpawnAndDelete;
-    
-    protected List<GameObject> Units;
+        public UnitSpawnAndDelete UnitSpawnAndDelete => _unitSpawnAndDelete;
 
-    [SerializeField] private UnitSpawnAndDelete _unitSpawnAndDelete;
+        protected List<GameObject> Units;
 
-    private int _damage;
+        [SerializeField] private UnitSpawnAndDelete _unitSpawnAndDelete;
 
-    protected void AddUnits(List<GameObject> units)
-    {
-        Units.AddRange(units);
-    }
+        private int _damage;
 
-    protected void RemoveUnits(List<GameObject> units)
-    {
-        var firstDeletedUnitIndex = units.FindIndex(x => x == units[0]);
-        Units.RemoveRange(firstDeletedUnitIndex, units.Count);
-    }
+        protected void AddUnits(List<GameObject> units)
+        {
+            Units.AddRange(units);
+        }
 
-    public void OnUnitsSpawning(int unitsCount)
-    {
-        var spawnedUnits = _unitSpawnAndDelete.SpawnUnits(unitsCount);
-        Units.AddRange(spawnedUnits);
-    }
+        protected void RemoveUnits(List<GameObject> units)
+        {
+            var firstDeletedUnitIndex = units.FindIndex(x => x == units[0]);
+            Units.RemoveRange(firstDeletedUnitIndex, units.Count);
+        }
 
-    public void OnUnitsDeleting(int unitsCount)
-    {
-        _unitSpawnAndDelete.DeleteUnits(unitsCount, ref Units);
-        
-        if(Units.Count <= 0) AllUnitsDied?.Invoke();
+        public void OnUnitsSpawning(int unitsCount)
+        {
+            var spawnedUnits = _unitSpawnAndDelete.SpawnUnits(unitsCount);
+            Units.AddRange(spawnedUnits);
+        }
+
+        public void OnUnitsDeleting(int unitsCount)
+        {
+            _unitSpawnAndDelete.DeleteUnits(unitsCount, ref Units);
+
+            if (Units.Count <= 0) AllUnitsDied?.Invoke();
+        }
     }
 }

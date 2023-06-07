@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Multiplication : IGateOperation
+namespace Assets.Scripts.GateOperations
 {
-    public readonly int MultiplicationCoef;
-
-    public Multiplication(int multiplicationCoef)
+    public class Multiplication : IGateOperation
     {
-        MultiplicationCoef = multiplicationCoef;
+        public readonly int MultiplicationCoef;
+
+        public Multiplication(int multiplicationCoef)
+        {
+            MultiplicationCoef = multiplicationCoef;
+        }
+        public int DoOperation(int incomingArmySize) => incomingArmySize * MultiplicationCoef;
     }
-    public int DoOperation(int incomingArmySize) => incomingArmySize * MultiplicationCoef; 
 }

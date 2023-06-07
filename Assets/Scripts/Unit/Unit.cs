@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Unit
+namespace Assets.Scripts.Unit
 {
     public abstract class Unit : MonoBehaviour
     {

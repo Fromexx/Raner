@@ -1,7 +1,8 @@
-﻿using Player;
+﻿using Assets.Scripts.Army.Enemy;
+using Assets.Scripts.Army.Player;
 using UnityEngine;
 
-namespace Fight
+namespace Assets.Scripts.Fight
 {
     public class Fight : MonoBehaviour
     {

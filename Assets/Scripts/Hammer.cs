@@ -1,3 +1,4 @@
+using Assets.Scripts.Army;
 using UnityEngine;
 
 public class Hammer : MonoBehaviour

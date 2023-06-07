@@ -1,6 +1,10 @@
+using Assets.Scripts.Army.Enemy;
 using UnityEngine;
 
-public class EnemyUnit : Unit.Unit
+namespace Assets.Scripts.Unit
 {
-    protected override bool IsColliderValid(Collider collider) => !collider.TryGetComponent(out EnemyArmy _);
+    public class EnemyUnit : Unit
+    {
+        protected override bool IsColliderValid(Collider collider) => !collider.TryGetComponent(out EnemyArmy _);
+    }
 }

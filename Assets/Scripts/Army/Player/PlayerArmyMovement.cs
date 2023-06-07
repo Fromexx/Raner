@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player
+namespace Assets.Scripts.Army.Player
 {
     public class PlayerArmyMovement : MonoBehaviour
     {

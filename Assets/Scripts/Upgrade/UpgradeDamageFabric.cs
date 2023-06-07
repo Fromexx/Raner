@@ -1,13 +1,14 @@
-﻿using Interfaces;
-using Player;
+﻿using Assets.Scripts.Army.Enemy;
+using Assets.Scripts.Army.Player;
+using Assets.Scripts.Interfaces;
 using UnityEngine;
 
-namespace Upgrade
+namespace Assets.Scripts.Upgrade
 {
     public class UpgradeDamageFabric : MonoBehaviour, IUpgradeFabric
     {
         [SerializeField] private int _price;
-        [SerializeField] private EnemyArmy _enemyArmy;
+        [SerializeField] private EnemyArmy _enemyArmy; 
         [SerializeField] private PlayerArmy _playerArmy;
         
         public void Upgrade()

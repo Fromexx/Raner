@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Interfaces
+namespace Assets.Scripts.Interfaces
 {
     public interface IUnitSpawnAndDelete
     {

@@ -1,10 +1,13 @@
-public class Division : IGateOperation
+namespace Assets.Scripts.GateOperations
 {
-    public readonly int DivisionCoef;
-
-    public Division(int divisionCoef)
+    public class Division : IGateOperation
     {
-        DivisionCoef = divisionCoef;
+        public readonly int DivisionCoef;
+
+        public Division(int divisionCoef)
+        {
+            DivisionCoef = divisionCoef;
+        }
+        public int DoOperation(int incomingArmySize) => incomingArmySize / DivisionCoef;
     }
-    public int DoOperation(int incomingArmySize) => incomingArmySize / DivisionCoef;
 }

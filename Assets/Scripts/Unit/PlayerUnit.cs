@@ -1,7 +1,10 @@
-using Player;
+using Assets.Scripts.Army.Player;
 using UnityEngine;
 
-public class PlayerUnit : Unit.Unit
+namespace Assets.Scripts.Unit
 {
-    protected override bool IsColliderValid(Collider collider) => !collider.TryGetComponent(out PlayerArmy _);
+    public class PlayerUnit : Unit
+    {
+        protected override bool IsColliderValid(Collider collider) => !collider.TryGetComponent(out PlayerArmy _);
+    }
 }

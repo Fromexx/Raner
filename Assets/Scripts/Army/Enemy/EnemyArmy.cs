@@ -1,21 +1,24 @@
 using UnityEngine;
 
-public class EnemyArmy : Army
+namespace Assets.Scripts.Army.Enemy
 {
-    [SerializeField] private int _startUnitsHealth;
-
-    private void Awake()
+    public class EnemyArmy : Army
     {
-        OnUnitsSpawning(Random.Range(5, 200));
+        [SerializeField] private int _startUnitsHealth;
 
-        foreach (var unitGameObject in Units)
+        private void Awake()
         {
-            unitGameObject.TryGetComponent(out Unit.Unit unit);
-            unit.Init(_startUnitsHealth);
+            OnUnitsSpawning(Random.Range(5, 200));
+
+            foreach (var unitGameObject in Units)
+            {
+                unitGameObject.TryGetComponent(out Unit.Unit unit);
+                unit.Init(_startUnitsHealth);
+            }
         }
+
+        public void IncreaseUnitsHealth(float increaseScalar) => _startUnitsHealth += 5;
+
+        public int GetStartUnitHealth() => _startUnitsHealth;
     }
-
-    public void IncreaseUnitsHealth(float increaseScalar) => _startUnitsHealth += 5;
-
-    public int GetStartUnitHealth() => _startUnitsHealth;
 }
