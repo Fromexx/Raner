@@ -1,19 +1,10 @@
-using UnityEngine;
-
-public class Addition : MonoBehaviour
+public class Addition : IGateOperation
 {
-    private int _value;
-
-    private void Awake()
+    public readonly int CountToAdd;
+ 
+    public Addition(int countToAdd)
     {
-        _value = Random.Range(1, 200);
+        CountToAdd = countToAdd;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out Army army))
-        {
-            army.OnUnitsSpawning(_value);
-        }
-    }
+    public int DoOperation(int incomingArmySize) => incomingArmySize + CountToAdd;
 }

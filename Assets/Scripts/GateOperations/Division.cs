@@ -1,21 +1,10 @@
-using Player;
-using UnityEngine;
-
-public class Division : MonoBehaviour
+public class Division : IGateOperation
 {
-    // ДИЧЬ
-    private int _value;
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.TryGetComponent(out PlayerArmy army)) return;
-        
-        _value = Random.Range(2, 5);
+    public readonly int DivisionCoef;
 
-        while (army.ArmyCount % _value != 0)
-        {
-            _value = Random.Range(2, 5);
-        }
-        army.OnUnitsSpawning(army.ArmyCount / _value);
+    public Division(int divisionCoef)
+    {
+        DivisionCoef = divisionCoef;
     }
+    public int DoOperation(int incomingArmySize) => incomingArmySize / DivisionCoef;
 }
