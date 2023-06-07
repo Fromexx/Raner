@@ -4,12 +4,11 @@ using UnityEngine;
 public class Hammer : MonoBehaviour
 {
     [SerializeField] private float _radius;
+    [SerializeField] private Transform attackPoint;
 
-    public void OnAttacking()
-    {
-        print("tohotkhkok");
-        
-        var units = Physics.OverlapSphere(transform.position, _radius);
+    private void OnAttacking()
+    {        
+        var units = Physics.OverlapSphere(attackPoint.position, _radius);
         
         foreach (var unit in units)
         {
@@ -18,5 +17,11 @@ public class Hammer : MonoBehaviour
             army.OnUnitsDeleting(army.ArmyCount);
             break;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, _radius);
     }
 }
