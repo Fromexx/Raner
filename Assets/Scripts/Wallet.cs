@@ -1,3 +1,5 @@
+using UnityEditor;
+
 public static class Wallet
 {
     private static int _money;
